@@ -4,7 +4,6 @@
 var express     = require('express');
 var mongoose    = require('mongoose');
 var bodyParser  = require('body-parser');
-
 var morgan      = require('morgan');
 
 // ------ Congifure application
@@ -13,9 +12,7 @@ var port        = process.env.PORT || 3000;
 var config      = require('./resource/config');
 var api         = require('./resource/APIroutes');
 
-
 mongoose.connect(config.dbURL);
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -27,8 +24,6 @@ app.use('/api', api);
 app.get('/', function(req, res) {
   res.send('Hello, beautiful!');
 });
-
-
 
 // ------ Serve
 app.listen(port, function() {
