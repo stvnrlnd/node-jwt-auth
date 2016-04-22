@@ -1,0 +1,36 @@
+{
+  "name": "node-jwt-auth",
+  "version": "0.0.1",
+  "description": "A simple implementation of JSON Web Tokens for authentication, based on the scotch.io tutorial (https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stvnrlnd/node-jwt-auth.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "json",
+    "jwt",
+    "web",
+    "tokens",
+    "auth"
+  ],
+  "author": "Steven Roland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stvnrlnd/node-jwt-auth/issues"
+  },
+  "homepage": "https://github.com/stvnrlnd/node-jwt-auth#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "^4.4.13",
+    "morgan": "^1.7.0"
+  }
+}
