@@ -38,6 +38,11 @@ api.route('/users')
       }
       res.json({ message: 'User created!' });
     });
+  })
+  .get(function(req, res) {
+    User.find({}, function(err, users) {
+      res.json(users);
+    });
   });
 
 app.use('/api', api);
