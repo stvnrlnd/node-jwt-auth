@@ -9,6 +9,7 @@ var morgan      = require('morgan');
 
 // ------ Congifure application
 var app         = express();
+var api         = express.Router();
 var port        = process.env.PORT || 3000;
 var config      = require('./resource/config');
 var User        = require('./resource/models/user');
@@ -24,6 +25,22 @@ app.use(morgan('dev'));
 app.get('/', function(req, res) {
   res.send('Hello, beautiful!');
 });
+
+api.route('/users')
+  .post(function(req, res) {
+    var user = new User();
+    user.name     = req.body.name;
+    user.password = req.body.password;
+    user.admin    = req.body.admin;
+    user.save(function(err) {
+      if (err){
+        res.send(err);
+      }
+      res.json({ message: 'User created!' });
+    });
+  });
+
+app.use('/api', api);
 
 // ------ Serve
 app.listen(port, function() {
