@@ -26,6 +26,11 @@ app.get('/', function(req, res) {
   res.send('Hello, beautiful!');
 });
 
+api.route('/')
+  .get(function(req, res) {
+    res.json({ message: 'Hello, beautiful! Welcome to the API.' });
+  });
+
 api.route('/users')
   .post(function(req, res) {
     var user = new User();
